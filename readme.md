@@ -9,7 +9,7 @@ Git - Version control system
 Microsoft Visual Studio - Integrated development environment (IDE) for running C++ projects
 ### Installation
 1. Clone the repository to your local machine using the following command: <br/>
-git clone `https://github.com/2002yousef/LeetCode-Solutions.git`
+`git clone https://github.com/2002yousef/LeetCode-Solutions.git`
 2. Navigate to the cloned repository on your local machine.
 3. Choose the folder corresponding to the desired problem difficulty: Easy, Medium, or Hard.
 4. Open the .sln file associated with the problem you wish to solve. 
