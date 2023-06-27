@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "389. Find the Difference", "389. Find the Difference.vcxproj", "{E979B04C-DF76-4970-8634-DDE8549D15DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Debug|x64.ActiveCfg = Debug|x64
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Debug|x64.Build.0 = Debug|x64
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Debug|x86.ActiveCfg = Debug|Win32
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Debug|x86.Build.0 = Debug|Win32
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Release|x64.ActiveCfg = Release|x64
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Release|x64.Build.0 = Release|x64
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Release|x86.ActiveCfg = Release|Win32
+		{E979B04C-DF76-4970-8634-DDE8549D15DA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C248803D-F2B1-42FA-B50B-4B71C67E8865}
+	EndGlobalSection
+EndGlobal
