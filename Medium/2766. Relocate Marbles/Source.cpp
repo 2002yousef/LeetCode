@@ -7,32 +7,26 @@ using namespace std;
 class Solution {
 public:
     vector<int> relocateMarbles(vector<int>& nums, vector<int>& moveFrom, vector<int>& moveTo) {
-        unordered_map<int, int> moveMap;
+        unordered_map<int, bool> map;
+        for (auto i : nums) {
+            map[i] = true;
+        }
+
         for (int i = 0; i < moveFrom.size(); i++) {
-            moveMap[moveFrom[i]] = moveTo[i]; // Store moveFrom -> moveTo mapping
+            map[moveFrom[i]] = false;
+            map[moveTo[i]] = true;
         }
-
-        vector<int> relocatedNums;
-        // Perform relocations using the moveMap
-        for (int i = 0; i < nums.size(); i++) {
-            if (moveMap.find(nums[i]) != moveMap.end()) {
-                relocatedNums.push_back(moveMap[nums[i]]);
-            }
-            else {
-                relocatedNums.push_back(nums[i]);
+        vector<int> occupied;
+        for (auto i : map) {
+            if (i.second)
+            {
+                occupied.push_back(i.first);
             }
         }
-
-        // Sort the relocatedNums vector
-        sort(relocatedNums.begin(), relocatedNums.end());
-        // Remove duplicates
-        relocatedNums.erase(unique(relocatedNums.begin(), relocatedNums.end()), relocatedNums.end());
-
-        return relocatedNums; // Return the vector with unique values
+        sort(occupied.begin(), occupied.end());
+        return occupied;
     }
 };
-
-
 
 
 int main() {
