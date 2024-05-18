@@ -1,0 +1,1 @@
+SELECT firstName, lastName, city, state from Address RIGHT JOIN Person ON Address.personId = Person.personId;
