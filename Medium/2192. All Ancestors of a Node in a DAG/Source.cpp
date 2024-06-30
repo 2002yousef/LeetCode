@@ -1,50 +1,48 @@
-#include <iostream>
 #include <vector>
-#include <algorithm>
 #include <unordered_map>
-#include <set>
-#include <stack>
+#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
 class Solution {
 public:
     vector<vector<int>> getAncestors(int n, vector<vector<int>>& edges) {
         unordered_map<int, vector<int>> nodes;
-        vector<vector<int>> ancestors;
-        for (int i = 0; i < n; i++)
-        {
-            nodes[i] = {};
-        }
+        vector<unordered_set<int>> ancestors(n);
+        vector<bool> visited(n, false);
 
-        for (int i = 0; i < edges.size(); i++)
-        {
+        // Build the adjacency list
+        for (int i = 0; i < edges.size(); i++) {
             nodes[edges[i][1]].push_back(edges[i][0]);
-            if (nodes[edges[i][0]].size() != 0)
-            {
-                for (int j = 0; j < nodes[edges[i][0]].size(); j++)
-                {
-                    nodes[edges[i][1]].push_back(nodes[edges[i][0]][j]);
-                }
-            }
-            
-        }
-        for (auto node : nodes) {
-            sort(node.second.begin(), node.second.end());
-            node.second.erase(unique(node.second.begin(), node.second.end()), node.second.end());
-            ancestors.push_back(node.second);   
         }
 
-        for (int i = 0; i < ancestors.size(); i++)
-        {
-            cout << i << " : ";
-            for (int  j= 0;  j< ancestors[i].size(); j++)
-            {
-                cout << ancestors[i][j] << " ";
+        // Perform DFS for each node to find all its ancestors
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                dfs(i, nodes, ancestors, visited);
             }
-            cout << endl;
         }
-        return ancestors;
-        
+
+        // Convert unordered_set to vector and sort
+        vector<vector<int>> result(n);
+        for (int i = 0; i < n; i++) {
+            result[i] = vector<int>(ancestors[i].begin(), ancestors[i].end());
+            sort(result[i].begin(), result[i].end());
+        }
+
+        return result;
+    }
+
+private:
+    void dfs(int node, unordered_map<int, vector<int>>& nodes, vector<unordered_set<int>>& ancestors, vector<bool>& visited) {
+        visited[node] = true;
+        for (int parent : nodes[node]) {
+            if (!visited[parent]) {
+                dfs(parent, nodes, ancestors, visited);
+            }
+            ancestors[node].insert(parent);
+            ancestors[node].insert(ancestors[parent].begin(), ancestors[parent].end());
+        }
     }
 };
 
