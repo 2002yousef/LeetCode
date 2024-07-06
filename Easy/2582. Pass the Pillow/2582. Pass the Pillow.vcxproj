@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{17a758dc-b83e-412e-b0ca-c8419dceb991}</ProjectGuid>
-    <RootNamespace>My2181MergeNodesinBetweenZeros</RootNamespace>
+    <ProjectGuid>{9c59f373-1448-4a4f-a6eb-09f9fd9eb922}</ProjectGuid>
+    <RootNamespace>My2582PassthePillow</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

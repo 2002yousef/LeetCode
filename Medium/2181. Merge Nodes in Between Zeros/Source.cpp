@@ -30,6 +30,6 @@ public:
 
             iterator = iterator->next;
         }
-        return dummy->next
+        return dummy->next;
     }
 };
