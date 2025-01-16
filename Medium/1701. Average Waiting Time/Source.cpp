@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
     double averageWaitingTime(vector<vector<int>>& customers) {
-        int current_time = 0, total_waiting_time = 0, waiting_time;
+        double current_time = 0, total_waiting_time = 0, waiting_time;
 
         for (auto customer : customers)
         {
